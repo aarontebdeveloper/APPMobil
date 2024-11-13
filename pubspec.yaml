@@ -1,0 +1,45 @@
+name: flutter_demo
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.0 <4.0.0" # Asegúrate de que tu código sea compatible con null safety.
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  font_awesome_flutter: ^10.7.0
+  intl_phone_number_input: ^0.7.0
+  http: ^0.13.6  # Cambia esto
+  shared_preferences: ^2.0.5
+  validators: ^3.0.0
+  image_picker: ^1.1.2  
+  path_provider: ^2.1.4
+  firebase_core: ^3.6.0
+  firebase_storage: ^12.3.4  # Actualizado
+  connectivity_plus: ^6.1.0   # Actualizado
+  intl: ^0.19.0                # Actualizado
+  image_picker_web: ^4.0.0     # Actualizado
+  flutter_kushki: ^0.0.6
+  url_launcher: ^6.3.1
+  webview_flutter: ^4.10.0
+  uni_links: ^0.5.1
+
+
+
+  
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/image/default_profile.png # Asegúrate de que esta ruta sea correcta.

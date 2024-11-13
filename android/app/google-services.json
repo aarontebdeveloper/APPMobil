@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "44865060719",
+    "project_id": "app-boleteria",
+    "storage_bucket": "app-boleteria.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:44865060719:android:31d58732680b2f6724329a",
+        "android_client_info": {
+          "package_name": "com.example.flutter_demo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9lu0mCzqveN07Eav514t1KuAg2O3wutw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

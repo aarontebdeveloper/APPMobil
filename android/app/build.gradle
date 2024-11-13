@@ -1,0 +1,67 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+    id 'com.google.gms.google-services' // Asegúrate de que esté aquí
+}
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader("UTF-8") { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterVersionCode = localProperties.getProperty("flutter.versionCode")
+if (flutterVersionCode == null) {
+    flutterVersionCode = "1"
+}
+
+def flutterVersionName = localProperties.getProperty("flutter.versionName")
+if (flutterVersionName == null) {
+    flutterVersionName = "1.0"
+}
+
+android {
+    namespace = "com.example.flutter_demo" // Cambia esto según el ID de tu aplicación
+    compileSdk = 34 // Asegúrate de que este número sea compatible con tu configuración
+    ndkVersion = localProperties.getProperty("flutter.ndkVersion")
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId = "com.example.flutter_demo" // Cambia esto según el ID de tu aplicación
+        minSdk = 21 // Asegúrate de que este número sea compatible
+        targetSdk = 34 // Asegúrate de que este número sea compatible
+        versionCode = flutterVersionCode.toInteger()
+        versionName = flutterVersionName
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+dependencies {
+    // Import the Firebase BoM
+    implementation platform('com.google.firebase:firebase-bom:33.4.0')
+
+    // Firebase Storage para subir imágenes
+    implementation 'com.google.firebase:firebase-storage'
+
+    // Firebase Analytics (opcional)
+    implementation 'com.google.firebase:firebase-analytics'
+
+    // WebView para Flutter
+    implementation 'androidx.webkit:webkit:1.5.0' // Asegúrate de incluir la dependencia de WebView
+}
+
+flutter {
+    source = "../.."
+}
